@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="2.489">
+  <testsuite name="SwrExampleContainer" errors="0" failures="0" skipped="0" timestamp="2025-05-21T05:56:41" time="1.68" tests="2">
+    <testcase classname="SwrExampleContainer renders component with data from msw handler" name="SwrExampleContainer renders component with data from msw handler" time="0.095">
+    </testcase>
+    <testcase classname="SwrExampleContainer renders correctly and matches snapshot" name="SwrExampleContainer renders correctly and matches snapshot" time="0.017">
+    </testcase>
+  </testsuite>
+</testsuites>
