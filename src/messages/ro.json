@@ -1,4 +1,8 @@
 {
+	"a11y": {
+		"checkingSession": "Se verifică sesiunea…",
+		"loggingIn": "Se autentifică…"
+	},
 	"navigation": {
 		"login": "Autentificare",
 		"home": "Pagina de start",
@@ -96,6 +100,9 @@
 			},
 			"prompts": {
 				"noAccount": "Nu ai un cont?"
+			},
+			"errors": {
+				"csrfFailed": "Nu s-a putut iniția autentificarea. Reîmprospătează pagina și încearcă din nou."
 			}
 		},
 		"register": {
@@ -254,6 +261,7 @@
 		"checkingAccess": "Se verifică accesul",
 		"loading": "Se încarcă livestream-ul",
 		"loadError": "Nu s-a putut încărca livestream-ul.",
+		"retry": "Încearcă din nou",
 		"videoId": "ID video YouTube: {videoId}",
 		"status": {
 			"live": "Live",
@@ -300,5 +308,29 @@
 			"email": "Email",
 			"password": "Parolă"
 		}
+	},
+	"welcomeModal": {
+		"title": "Bun venit în aplicație",
+		"intro": "Acest demo combină autentificarea hibridă cu un player livestream YouTube. Mai jos găsești rutele principale și tehnologiile folosite.",
+		"routesTitle": "Rute principale",
+		"routes": {
+			"watch": "Pagină publică de livestream — vizionează videoclipul încorporat (autentificare necesară pentru redare)",
+			"login": "Autentifică-te cu datele demo pentru a accesa zonele protejate",
+			"dashboard": "Panou protejat cu detaliile sesiunii și livestream-ul"
+		},
+		"techTitle": "Tehnologii",
+		"tech": {
+			"react": "React 18 + TypeScript",
+			"vite": "Vite (build și server de dezvoltare)",
+			"mantine": "Mantine (componente UI și temă)",
+			"router": "React Router (rutare client)",
+			"reactQuery": "TanStack React Query (stare server și mutații)",
+			"openapi": "@hey-api/openapi-ts (client API generat din OpenAPI)",
+			"msw": "MSW (API mock în dezvoltare)",
+			"vitest": "Vitest + Testing Library (teste unitare și de integrare)",
+			"i18n": "i18n personalizat (engleză și română)"
+		},
+		"gotIt": "Am înțeles",
+		"closeAria": "Închide dialogul de bun venit"
 	}
 }

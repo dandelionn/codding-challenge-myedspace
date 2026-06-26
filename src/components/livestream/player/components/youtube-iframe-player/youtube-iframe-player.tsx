@@ -160,8 +160,16 @@ export default function YoutubeIframePlayer({ videoId, title, onEvent }: VideoPl
 				title={title}
 				aria-label={title}
 			/>
-			{status === 'loading' && <p className={styles.status}>{t('loading')}</p>}
-			{status === 'error' && <p className={styles.status}>{t('error')}</p>}
+			{status === 'loading' && (
+				<p className={styles.status} role="status">
+					{t('loading')}
+				</p>
+			)}
+			{status === 'error' && (
+				<p className={styles.status} role="alert">
+					{t('error')}
+				</p>
+			)}
 		</div>
 	);
 }

@@ -1,7 +1,7 @@
-import { Text } from '@mantine/core';
 import { useLocation } from 'react-router-dom';
 import { useLivestreamAccess, useVideoEventLog } from '@/components/livestream';
 import { useTranslations } from '@/i18n';
+import LivestreamErrorView from './components/livestream-error-view';
 import LivestreamLoading from './components/livestream-loading';
 import LivestreamPlayerView from './components/livestream-player-view';
 import LivestreamUnauthorizedView from './components/livestream-unauthorized-view';
@@ -15,8 +15,10 @@ export default function LivestreamPanel() {
 	const { events, recordEvent, clearEvents } = useVideoEventLog();
 	const {
 		data: livestream,
-		isLoading: isLivestreamLoading,
+		isPending: isLivestreamPending,
+		isFetching: isLivestreamFetching,
 		isError: isLivestreamError,
+		retry: retryLivestream,
 	} = useLivestreamData({ enabled: isAuthenticated });
 
 	if (isAccessLoading) {
@@ -27,12 +29,23 @@ export default function LivestreamPanel() {
 		return <LivestreamUnauthorizedView redirectTo={location.pathname} />;
 	}
 
-	if (isLivestreamLoading) {
+	if (isLivestreamPending && !isLivestreamError) {
 		return <LivestreamLoading label={t('loading')} />;
 	}
 
-	if (isLivestreamError || !livestream) {
-		return <Text c="dimmed">{t('loadError')}</Text>;
+	if (isLivestreamError) {
+		return (
+			<LivestreamErrorView
+				onRetry={() => {
+					void retryLivestream();
+				}}
+				isRetrying={isLivestreamFetching}
+			/>
+		);
+	}
+
+	if (!livestream) {
+		return <LivestreamLoading label={t('loading')} />;
 	}
 
 	return (

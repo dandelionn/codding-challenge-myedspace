@@ -19,6 +19,7 @@ type LoginFormProps = {
 export default function LoginForm({ onSubmit, loading, messages }: LoginFormProps) {
 	const [loadingInProgress, setLoading] = useState(loading);
 	const t = useTranslations('forms.login');
+	const tA11y = useTranslations('a11y');
 
 	const emailInputId = useId();
 	const passwordInputId = useId();
@@ -52,6 +53,7 @@ export default function LoginForm({ onSubmit, loading, messages }: LoginFormProp
 			>
 				<CustomLoadingOverlay
 					visible={loading}
+					loaderLabel={tA11y('loggingIn')}
 					onTransitionStart={() => setLoading(true)}
 					onTransitionEnd={() => setLoading(false)}
 				/>
@@ -78,7 +80,9 @@ export default function LoginForm({ onSubmit, loading, messages }: LoginFormProp
 							</Link>
 						</span>
 					</div>
-					{messages && !loadingInProgress && <MessageBox messages={messages} className={styles.messageBox} />}
+					{messages && messages.length > 0 && !loadingInProgress && (
+						<MessageBox messages={messages} className={styles.messageBox} />
+					)}
 					<Button fullWidth type="submit" className={styles.submitButton}>
 						{t('buttons.login')}
 					</Button>

@@ -18,7 +18,9 @@ type MessageBoxProps = AlertProps & {
 
 export default function MessageBox({ messages, alertSeverity, onClose, className, ...rest }: MessageBoxProps) {
 	const [visible, setVisible] = useState(true);
-	if (!visible) return null;
+	const visibleMessages = messages.filter((message) => message.text.trim().length > 0);
+
+	if (!visible || visibleMessages.length === 0) return null;
 
 	// map our severities to Mantine colors
 	const colorMap: Record<string, string> = {
@@ -29,7 +31,7 @@ export default function MessageBox({ messages, alertSeverity, onClose, className
 	};
 
 	// determine overall color: explicit prop > first message severity > 'info'
-	const overall = alertSeverity ?? messages[0]?.severity ?? 'info';
+	const overall = alertSeverity ?? visibleMessages[0]?.severity ?? 'info';
 	const alertColor = colorMap[overall] || 'blue';
 
 	const handleClose = () => {
@@ -53,10 +55,10 @@ export default function MessageBox({ messages, alertSeverity, onClose, className
 				size="sm"
 				spacing="xs"
 				classNames={{
-					root: classNames(styles.messageList, messages.length === 1 && styles.singleMessage),
+					root: classNames(styles.messageList, visibleMessages.length === 1 && styles.singleMessage),
 				}}
 			>
-				{messages.map((item, idx) => {
+				{visibleMessages.map((item, idx) => {
 					const itemColor = colorMap[item.severity ?? overall] || alertColor;
 					return (
 						<List.Item key={idx}>

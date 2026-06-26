@@ -1,4 +1,8 @@
 {
+	"a11y": {
+		"checkingSession": "Checking your session…",
+		"loggingIn": "Logging in…"
+	},
 	"navigation": {
 		"home": "Home",
 		"login": "Login",
@@ -96,6 +100,9 @@
 			},
 			"prompts": {
 				"noAccount": "Don't have an account?"
+			},
+			"errors": {
+				"csrfFailed": "Unable to start login. Please refresh the page and try again."
 			}
 		},
 		"register": {
@@ -254,6 +261,7 @@
 		"checkingAccess": "Checking access",
 		"loading": "Loading livestream",
 		"loadError": "Unable to load the livestream.",
+		"retry": "Try again",
 		"videoId": "YouTube video ID: {videoId}",
 		"status": {
 			"live": "Live",
@@ -300,5 +308,29 @@
 			"email": "Email",
 			"password": "Password"
 		}
+	},
+	"welcomeModal": {
+		"title": "Welcome to the app",
+		"intro": "This demo combines hybrid authentication with a YouTube livestream viewer. Here is a quick map of the main routes and the technologies used to build it.",
+		"routesTitle": "Main routes",
+		"routes": {
+			"watch": "Public livestream page — watch the embedded video (login required to play)",
+			"login": "Sign in with the demo credentials to access protected areas",
+			"dashboard": "Protected dashboard with your session details and the livestream panel"
+		},
+		"techTitle": "Tech stack",
+		"tech": {
+			"react": "React 18 + TypeScript",
+			"vite": "Vite (build tool and dev server)",
+			"mantine": "Mantine (UI components and theming)",
+			"router": "React Router (client-side routing)",
+			"reactQuery": "TanStack React Query (server state and mutations)",
+			"openapi": "@hey-api/openapi-ts (OpenAPI-generated API client)",
+			"msw": "MSW (mock API in development)",
+			"vitest": "Vitest + Testing Library (unit and integration tests)",
+			"i18n": "Custom i18n (English and Romanian)"
+		},
+		"gotIt": "Got it",
+		"closeAria": "Close welcome dialog"
 	}
 }

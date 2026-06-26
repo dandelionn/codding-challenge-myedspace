@@ -3,10 +3,11 @@ import LoginContainer from '@/containers/login';
 import MswCredentialsHint from '@/components/dev/msw-credentials-hint';
 import LocaleSwitcher from '@/components/i18n/locale-switcher';
 import { useMswOptional } from '@/providers/msw-provider';
-import { useTranslations } from '@/i18n';
+import { usePageTitle, useTranslations } from '@/i18n';
 
 export default function LoginPage() {
 	const t = useTranslations('pages.login');
+	usePageTitle(t('title'));
 	const msw = useMswOptional();
 
 	return (

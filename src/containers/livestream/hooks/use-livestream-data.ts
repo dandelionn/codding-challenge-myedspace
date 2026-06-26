@@ -6,9 +6,15 @@ type UseLivestreamDataOptions = {
 };
 
 export function useLivestreamData({ enabled = true }: UseLivestreamDataOptions = {}) {
-	return useQuery({
+	const query = useQuery({
 		...getLivestreamCurrentOptions(),
 		enabled,
 		retry: false,
+		staleTime: 0,
 	});
+
+	return {
+		...query,
+		retry: () => query.refetch(),
+	};
 }

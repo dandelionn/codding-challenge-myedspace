@@ -105,7 +105,7 @@ export const theme: MantineThemeOverride = {
 		}),
 		Modal: Modal.extend({
 			classNames: {
-				root: modalStyles.root,
+				content: modalStyles.root,
 				overlay: modalStyles.overlay,
 			},
 		}),

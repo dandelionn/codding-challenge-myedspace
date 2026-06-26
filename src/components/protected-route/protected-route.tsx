@@ -3,9 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 import { getAuthSessionOptions } from '@/api/generated/@tanstack/react-query.gen';
 import { PublicRoutes } from '@/routes';
 import { Loader, Center } from '@mantine/core';
+import { useTranslations } from '@/i18n';
 
 export default function ProtectedRoute() {
 	const location = useLocation();
+	const t = useTranslations('a11y');
 	const { data, isLoading, isError } = useQuery({
 		...getAuthSessionOptions(),
 		retry: false,
@@ -13,8 +15,8 @@ export default function ProtectedRoute() {
 
 	if (isLoading) {
 		return (
-			<Center h="100vh">
-				<Loader />
+			<Center h="100vh" component="main">
+				<Loader aria-label={t('checkingSession')} />
 			</Center>
 		);
 	}

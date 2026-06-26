@@ -74,7 +74,7 @@ export default function VideoEventLog({ events, onClear }: VideoEventLogProps) {
 			{events.length === 0 ? (
 				<p className={styles.empty}>{t('empty')}</p>
 			) : (
-				<ul ref={listRef} className={styles.list}>
+				<ul ref={listRef} className={styles.list} aria-live="polite" aria-relevant="additions">
 					{events.map((event, index) => (
 						<li key={`${event.at}-${event.type}-${index}`} className={styles.item}>
 							<span className={badgeClassName(event.type)}>{t(`types.${event.type}`)}</span>

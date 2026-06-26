@@ -6,6 +6,11 @@ let pendingRequests: (() => void)[] = [];
 const LOGIN_URL = '/login';
 const BASE_SERVER_URL = 'http://localhost:3001';
 
+function releasePendingRequests() {
+	pendingRequests.forEach((callback) => callback());
+	pendingRequests = [];
+}
+
 async function refreshToken(): Promise<void> {
 	if (isRefreshing) {
 		return new Promise((resolve) => {
@@ -28,30 +33,38 @@ async function refreshToken(): Promise<void> {
 		if (!response.ok) {
 			throw new Error('Refresh failed');
 		}
-
-		pendingRequests.forEach((cb) => cb());
 	} finally {
-		pendingRequests = [];
 		isRefreshing = false;
+		releasePendingRequests();
 	}
 }
 
-export const customFetch: typeof fetch = async (input, init) => {
-	let response = await fetch(input, {
+function createFetchRequest(input: RequestInfo | URL, init?: RequestInit): Request {
+	if (input instanceof Request) {
+		return input.clone();
+	}
+
+	return new Request(input, {
 		...init,
 		credentials: 'include',
 	});
+}
+
+export const customFetch: typeof fetch = async (input, init) => {
+	const request = createFetchRequest(input, init);
+	const retryRequest = request.clone();
+
+	let response = await fetch(request);
 
 	if (response.status === 401) {
 		try {
 			await refreshToken();
-
-			response = await fetch(input, {
-				...init,
-				credentials: 'include',
-			});
+			response = await fetch(retryRequest);
 		} catch (err) {
-			window.location.replace(LOGIN_URL);
+			if (!import.meta.env.VITEST) {
+				window.location.replace(LOGIN_URL);
+			}
+
 			console.error('Token refresh failed:', err);
 		}
 	}

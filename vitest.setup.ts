@@ -21,6 +21,8 @@ Object.defineProperty(window, "matchMedia", {
 
 const server = setupServer(...handlers);
 
+export const mswServer = server;
+
 beforeAll(() => {
   server.listen();
 });

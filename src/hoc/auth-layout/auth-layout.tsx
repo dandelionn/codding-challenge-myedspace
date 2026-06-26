@@ -10,7 +10,7 @@ export default function AuthLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className={classes.layout}>
+		<main className={classes.layout}>
 			<section className={classes.top}>
 				<div className={classes.left}>
 					<h1 className={classes.title}>{title}</h1>
@@ -26,6 +26,6 @@ export default function AuthLayout({
 					</svg>
 				</div>
 			</section>
-		</div>
+		</main>
 	);
 }

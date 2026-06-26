@@ -4,7 +4,7 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import { getCsrfToken, type User } from '@/api/generated';
 import { getAuthSessionQueryKey, postAuthLogoutMutation } from '@/api/generated/@tanstack/react-query.gen';
 import LivestreamPanel from '@/containers/livestream';
-import { useTranslations } from '@/i18n';
+import { usePageTitle, useTranslations } from '@/i18n';
 import { PublicRoutes } from '@/routes';
 
 export default function DashboardPage() {
@@ -13,6 +13,7 @@ export default function DashboardPage() {
 	const queryClient = useQueryClient();
 	const t = useTranslations('pages.dashboard');
 	const tNav = useTranslations('navigation');
+	usePageTitle(t('title'));
 
 	const { mutate: logout, isPending } = useMutation({
 		...postAuthLogoutMutation(),
@@ -31,7 +32,7 @@ export default function DashboardPage() {
 	};
 
 	return (
-		<Container py="xl">
+		<Container component="main" py="xl">
 			<Stack gap="xl">
 				<div>
 					<Title order={1}>{t('title')}</Title>
