@@ -1,28 +1,33 @@
-import { Button, createTheme, MantineProvider } from '@mantine/core';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
 import './App.css'
-import { Interview } from './views/interview';
-import { SwrExample } from './views/swr-example';
-import { theme } from './theme';
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <Router>
-        <MantineProvider theme={theme}>
-            {/* <Button>Text</Button>
-            <nav>
-                <ul>
-                    <li><Link to="/">Interview</Link></li>
-                    <li><Link to="/swr-example">Swr example</Link></li>
-                </ul>
-            </nav> */}
-            <Routes>
-                <Route path="/" element={<Interview />} />
-                <Route path="/swr-example" element={<SwrExample />} />
-                <Route path="/interview" element={<Interview />} />
-            </Routes>
-        </MantineProvider>
-    </Router>
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank" rel="noreferrer">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank" rel="noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((value) => value + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   )
 }
 
