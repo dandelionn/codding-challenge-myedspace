@@ -56,6 +56,9 @@ import type {
   GetAuthSessionErrors,
   GetAuthValidateSessionData,
   GetAuthValidateSessionResponses,
+  GetLivestreamCurrentData,
+  GetLivestreamCurrentResponses,
+  GetLivestreamCurrentErrors,
   GetCsrfTokenData,
   GetCsrfTokenResponses,
 } from "./types.gen";
@@ -466,6 +469,23 @@ export const getAuthValidateSession = <ThrowOnError extends boolean = false>(
     ThrowOnError
   >({
     url: "/auth/validate-session",
+    ...options,
+  });
+};
+
+/**
+ * Get current livestream
+ * Returns metadata for the active YouTube livestream embed.
+ */
+export const getLivestreamCurrent = <ThrowOnError extends boolean = false>(
+  options?: Options<GetLivestreamCurrentData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).get<
+    GetLivestreamCurrentResponses,
+    GetLivestreamCurrentErrors,
+    ThrowOnError
+  >({
+    url: "/livestream/current",
     ...options,
   });
 };

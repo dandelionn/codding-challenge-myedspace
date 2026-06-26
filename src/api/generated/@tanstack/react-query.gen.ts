@@ -19,6 +19,7 @@ import {
   postAuthVerify2Fa,
   getAuthSession,
   getAuthValidateSession,
+  getLivestreamCurrent,
   getCsrfToken,
 } from "../sdk.gen";
 import { queryOptions, type UseMutationOptions } from "@tanstack/react-query";
@@ -70,6 +71,7 @@ import type {
   PostAuthVerify2FaResponse,
   GetAuthSessionData,
   GetAuthValidateSessionData,
+  GetLivestreamCurrentData,
   GetCsrfTokenData,
 } from "../types.gen";
 import { client as _heyApiClient } from "../client.gen";
@@ -914,6 +916,31 @@ export const getAuthValidateSessionOptions = (
       return data;
     },
     queryKey: getAuthValidateSessionQueryKey(options),
+  });
+};
+
+export const getLivestreamCurrentQueryKey = (
+  options?: Options<GetLivestreamCurrentData>,
+) => createQueryKey("getLivestreamCurrent", options);
+
+/**
+ * Get current livestream
+ * Returns metadata for the active YouTube livestream embed.
+ */
+export const getLivestreamCurrentOptions = (
+  options?: Options<GetLivestreamCurrentData>,
+) => {
+  return queryOptions({
+    queryFn: async ({ queryKey, signal }) => {
+      const { data } = await getLivestreamCurrent({
+        ...options,
+        ...queryKey[0],
+        signal,
+        throwOnError: true,
+      });
+      return data;
+    },
+    queryKey: getLivestreamCurrentQueryKey(options),
   });
 };
 

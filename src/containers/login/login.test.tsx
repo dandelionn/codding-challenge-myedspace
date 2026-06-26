@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { LocaleProvider } from '@/i18n';
 import LoginPage from '@/views/login';
 import DashboardPage from '@/views/dashboard';
 import ProtectedRoute from '@/components/protected-route';
@@ -19,19 +20,21 @@ function renderApp(initialEntries = ['/login']) {
 	});
 
 	return render(
-		<QueryClientProvider client={queryClient}>
-			<MantineProvider theme={theme}>
-				<MemoryRouter initialEntries={initialEntries}>
-					<Routes>
-						<Route path="/" element={<Navigate to={PublicRoutes.login} replace />} />
-						<Route path={PublicRoutes.login} element={<LoginPage />} />
-						<Route element={<ProtectedRoute />}>
-							<Route path={PrivateRoutes.dashboard} element={<DashboardPage />} />
-						</Route>
-					</Routes>
-				</MemoryRouter>
-			</MantineProvider>
-		</QueryClientProvider>
+		<LocaleProvider>
+			<QueryClientProvider client={queryClient}>
+				<MantineProvider theme={theme}>
+					<MemoryRouter initialEntries={initialEntries}>
+						<Routes>
+							<Route path="/" element={<Navigate to={PublicRoutes.login} replace />} />
+							<Route path={PublicRoutes.login} element={<LoginPage />} />
+							<Route element={<ProtectedRoute />}>
+								<Route path={PrivateRoutes.dashboard} element={<DashboardPage />} />
+							</Route>
+						</Routes>
+					</MemoryRouter>
+				</MantineProvider>
+			</QueryClientProvider>
+		</LocaleProvider>
 	);
 }
 

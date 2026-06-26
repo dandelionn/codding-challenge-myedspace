@@ -4,7 +4,7 @@ import { useForm } from '@mantine/form';
 import { Link } from 'react-router-dom';
 import { useId, useState } from 'react';
 import MediaOptions from '../media-options';
-import { useTranslations } from '@/i18n/use-translations';
+import { useTranslations } from '@/i18n';
 import MessageBox, { Message } from '@/components/message-box';
 import { CustomLoadingOverlay } from '@/components/auth/custom-loading-overlay';
 import type { LoginRequest } from '@/api/generated';

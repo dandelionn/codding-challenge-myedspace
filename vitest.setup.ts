@@ -3,6 +3,7 @@ import "@testing-library/jest-dom/vitest";
 import { setupServer } from "msw/node";
 import { vi } from "vitest";
 import { handlers } from "./src/mocks/handlers";
+import { setDemoAuthenticated } from "./src/mocks/api/demo-session";
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -26,6 +27,7 @@ beforeAll(() => {
 
 afterEach(() => {
   server.resetHandlers();
+  setDemoAuthenticated(false);
 });
 
 afterAll(() => {

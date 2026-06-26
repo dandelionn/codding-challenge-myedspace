@@ -19,10 +19,10 @@ export default function ProtectedRoute() {
 		);
 	}
 
-	if (isError || !data) {
+	if (isError || !data?.user) {
 		const redirect = encodeURIComponent(location.pathname);
 		return <Navigate to={`${PublicRoutes.login}?redirect=${redirect}`} replace />;
 	}
 
-	return <Outlet context={data} />;
+	return <Outlet context={data.user} />;
 }

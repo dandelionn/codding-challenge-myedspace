@@ -61,7 +61,11 @@
 		},
 		"dashboard": {
 			"title": "Your Dashboard",
-			"subtitle": "Overview of your account, activity, and key insights."
+			"subtitle": "Overview of your account, activity, and key insights.",
+			"welcome": "Welcome, {firstName} {lastName} ({email})"
+		},
+		"watch": {
+			"title": "Watch Livestream"
 		},
 		"not-found": {
 			"title": "Page not found",
@@ -237,5 +241,64 @@
 		"name": "Next.js Auth Demo",
 		"short_name": "Auth Demo",
 		"description": "Next.js application with hybrid authentication"
+	},
+	"locale": {
+		"label": "Language",
+		"en": "English",
+		"ro": "Română"
+	},
+	"livestream": {
+		"title": "Livestream",
+		"ariaLabel": "Livestream",
+		"authRequired": "Authentication required",
+		"checkingAccess": "Checking access",
+		"loading": "Loading livestream",
+		"loadError": "Unable to load the livestream.",
+		"videoId": "YouTube video ID: {videoId}",
+		"status": {
+			"live": "Live",
+			"offline": "Offline"
+		},
+		"loginPrompt": {
+			"title": "Sign in to watch the livestream",
+			"description": "The embedded video is only available to authenticated users. Log in to start watching and track your playback interactions.",
+			"button": "Log in"
+		},
+		"player": {
+			"loading": "Loading player…",
+			"error": "Unable to load the YouTube player.",
+			"mockLabel": "Mock player",
+			"videoId": "videoId: {videoId}",
+			"controls": {
+				"play": "Play",
+				"pause": "Pause",
+				"seek": "Seek +30s"
+			}
+		},
+		"events": {
+			"ariaLabel": "Video interaction events",
+			"title": "Interaction events",
+			"countAriaLabel": "{count} events recorded",
+			"subtitle": "Stored in memory for this session. Also logged to the browser console.",
+			"clear": "Clear",
+			"empty": "Play, pause, or seek the video — each action will appear here and in the console as [video-event].",
+			"types": {
+				"play": "play",
+				"pause": "pause",
+				"seek": "seek"
+			}
+		}
+	},
+	"dev": {
+		"msw": {
+			"enabled": "MSW enabled",
+			"disabled": "MSW disabled",
+			"enableAria": "Enable MSW",
+			"disableAria": "Disable MSW",
+			"credentialsTitle": "MSW demo user",
+			"credentialsAria": "MSW demo credentials",
+			"email": "Email",
+			"password": "Password"
+		}
 	}
 }

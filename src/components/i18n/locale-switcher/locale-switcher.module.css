@@ -1,0 +1,59 @@
+.switcher {
+	position: fixed;
+	top: var(--spacing-lg);
+	left: var(--spacing-lg);
+	z-index: 1000;
+	display: flex;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-xxs);
+	border: 1px solid var(--color-semantic-border-divider);
+	border-radius: var(--border-radius-full);
+	background: var(--color-semantic-surface-card);
+	box-shadow: var(--color-semantic-shadow-md);
+}
+
+.button {
+	min-height: 36px;
+	padding: var(--spacing-xs) var(--spacing-md);
+	border: 1px solid transparent;
+	border-radius: var(--border-radius-full);
+	background: transparent;
+	color: var(--color-semantic-text-secondary);
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-sm);
+	font-weight: var(--typography-font-weight-semibold);
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.button:hover {
+	color: var(--color-semantic-text-primary);
+}
+
+.buttonActive {
+	min-height: 36px;
+	padding: var(--spacing-xs) var(--spacing-md);
+	border: 1px solid transparent;
+	border-radius: var(--border-radius-full);
+	background: var(--color-semantic-gradient-primary);
+	color: #ffffff;
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-sm);
+	font-weight: var(--typography-font-weight-semibold);
+	cursor: pointer;
+	transition: filter 0.2s ease;
+}
+
+.buttonActive:hover {
+	filter: brightness(1.03);
+}
+
+@media (max-width: 480px) {
+	.switcher {
+		top: var(--spacing-sm);
+		left: var(--spacing-sm);
+	}
+}

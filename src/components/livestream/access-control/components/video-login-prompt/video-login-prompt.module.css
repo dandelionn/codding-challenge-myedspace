@@ -1,0 +1,33 @@
+.prompt {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-md);
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	padding: var(--spacing-xl);
+	border: 1px dashed var(--color-semantic-border-medium);
+	border-radius: var(--border-radius-lg);
+	background: var(--color-semantic-background-secondary);
+	text-align: center;
+}
+
+.title {
+	margin: 0;
+	font-size: var(--typography-font-size-xl);
+	font-weight: var(--typography-font-weight-semibold);
+	color: var(--color-semantic-text-primary);
+}
+
+.description {
+	margin: 0;
+	max-width: 42ch;
+	font-size: var(--typography-font-size-sm);
+	color: var(--color-semantic-text-secondary);
+	line-height: var(--typography-line-height-relaxed);
+}
+
+.button {
+	margin-top: var(--spacing-sm);
+}

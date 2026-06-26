@@ -1,6 +1,5 @@
-import en from '@/messages/en.json';
-
-type Messages = typeof en;
+import { useLocale } from './locale-context';
+import type { Messages } from './config';
 
 function getNestedValue(source: Record<string, unknown>, path: string): string | undefined {
 	return path.split('.').reduce<unknown>((current, key) => {
@@ -11,9 +10,21 @@ function getNestedValue(source: Record<string, unknown>, path: string): string |
 	}, source) as string | undefined;
 }
 
+function interpolate(template: string, values?: Record<string, string | number>) {
+	if (!values) {
+		return template;
+	}
+
+	return Object.entries(values).reduce((result, [key, value]) => {
+		return result.replace(new RegExp(`\\{${key}\\}`, 'g'), String(value));
+	}, template);
+}
+
 export function useTranslations(namespace: keyof Messages | string) {
-	return (key: string) => {
-		const value = getNestedValue(en as Record<string, unknown>, `${namespace}.${key}`);
-		return value ?? key;
+	const { messages } = useLocale();
+
+	return (key: string, values?: Record<string, string | number>) => {
+		const value = getNestedValue(messages as Record<string, unknown>, `${namespace}.${key}`);
+		return interpolate(value ?? key, values);
 	};
 }

@@ -254,6 +254,26 @@ components:
           type: string
           nullable: true
           example: active
+    Livestream:
+      type: object
+      required:
+        - videoId
+        - status
+        - title
+      properties:
+        videoId:
+          type: string
+          description: YouTube video ID for the current livestream embed
+          example: LXb3EKWsInQ
+        status:
+          type: string
+          enum:
+            - live
+            - offline
+          example: live
+        title:
+          type: string
+          example: Demo Video — Costa Rica 4K
     ResendActivationEmailRequest:
       type: object
       required:
@@ -1280,6 +1300,25 @@ paths:
                   summary: Invalid session or refresh token
                   value:
                     valid: false
+  /livestream/current:
+    get:
+      summary: Get current livestream
+      description: Returns metadata for the active YouTube livestream embed.
+      tags:
+        - Livestream
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: Current livestream retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Livestream'
+        '401':
+          $ref: '#/components/responses/UnauthorizedErrors'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
   /csrf/token:
     get:
       summary: Get CSRF token

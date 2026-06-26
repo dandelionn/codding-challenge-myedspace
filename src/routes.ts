@@ -5,6 +5,7 @@ export const PrivateRoutes = {
 
 export const PublicRoutes = {
 	login: '/login',
+	watch: '/watch',
 	register: '/register',
 	requestPasswordReset: '/request-password-reset',
 	requestActivationEmail: '/request-confirmation-email',

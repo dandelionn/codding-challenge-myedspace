@@ -1,15 +1,13 @@
 import { http, HttpResponse } from 'msw';
-import { API_BASE_URL } from './constants';
-import { MOCK_USER } from './constants';
+import { API_BASE_URL, MOCK_USER } from './constants';
+import { isDemoAuthenticated } from './demo-session';
 
 export const authSessionHandlers = [
 	http.get(`${API_BASE_URL}/auth/session`, ({ request }) => {
-		const cookies = request.headers.get('cookie');
-
-		if (!cookies?.includes('connect.sid') || !cookies?.includes('access_token')) {
+		if (!isDemoAuthenticated(request)) {
 			return new HttpResponse(null, { status: 401 });
 		}
 
-		return HttpResponse.json(MOCK_USER);
+		return HttpResponse.json({ user: MOCK_USER });
 	}),
 ];

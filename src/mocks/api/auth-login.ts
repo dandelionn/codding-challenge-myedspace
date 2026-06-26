@@ -2,6 +2,7 @@ import { http, HttpResponse } from 'msw';
 import type { LoginRequest } from '@/api/generated';
 import { HARDCODED_USER, MOCK_USER, API_BASE_URL } from './constants';
 import { createErrorResponse, validateCSRF } from './auth-utils';
+import { setDemoAuthenticated } from './demo-session';
 
 const sessionCookies =
 	'connect.sid=mock-session; Path=/; SameSite=Strict, access_token=mock-access-token; Path=/; SameSite=Strict';
@@ -14,6 +15,8 @@ export const authLoginHandlers = [
 		const { email, password } = (await request.json()) as LoginRequest;
 
 		if (email === HARDCODED_USER.email && password === HARDCODED_USER.password) {
+			setDemoAuthenticated(true);
+
 			return HttpResponse.json(MOCK_USER, {
 				headers: {
 					'Set-Cookie': sessionCookies,

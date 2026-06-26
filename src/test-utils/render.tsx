@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { MantineProvider } from '@mantine/core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { MemoryRouter } from 'react-router-dom';
+import { LocaleProvider } from '@/i18n';
 import { theme } from '@/theme';
 
 export function render(
@@ -19,13 +20,15 @@ export function render(
 
 	return testingLibraryRender(ui, {
 		wrapper: ({ children }) => (
-			<QueryClientProvider client={queryClient}>
-				<MantineProvider theme={theme}>
-					<MemoryRouter initialEntries={options?.initialEntries ?? ['/']}>
-						{children}
-					</MemoryRouter>
-				</MantineProvider>
-			</QueryClientProvider>
+			<LocaleProvider>
+				<QueryClientProvider client={queryClient}>
+					<MantineProvider theme={theme}>
+						<MemoryRouter initialEntries={options?.initialEntries ?? ['/']}>
+							{children}
+						</MemoryRouter>
+					</MantineProvider>
+				</QueryClientProvider>
+			</LocaleProvider>
 		),
 	});
 }

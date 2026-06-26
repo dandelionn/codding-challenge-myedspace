@@ -1,0 +1,23 @@
+.panel {
+	display: grid;
+	gap: var(--spacing-xl);
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.title {
+	margin: 0;
+	font-size: var(--typography-font-size-2xl);
+	font-weight: var(--typography-font-weight-bold);
+	color: var(--color-semantic-text-primary);
+}
+
+.meta {
+	margin: 0;
+	font-size: var(--typography-font-size-sm);
+	color: var(--color-semantic-text-secondary);
+}

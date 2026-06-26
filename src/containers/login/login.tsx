@@ -14,7 +14,7 @@ export default function LoginContainer() {
 
 	useEffect(() => {
 		if (status === 'success' && data) {
-			queryClient.setQueryData(getAuthSessionQueryKey(), data);
+			queryClient.setQueryData(getAuthSessionQueryKey(), { user: data });
 
 			const redirectUrl = searchParams.get('redirect');
 			navigate(redirectUrl ?? PrivateRoutes.dashboard, { replace: true });

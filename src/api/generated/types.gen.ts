@@ -45,6 +45,15 @@ export type User = {
   status?: string | null;
 };
 
+export type Livestream = {
+  /**
+   * YouTube video ID for the current livestream embed
+   */
+  videoId: string;
+  status: "live" | "offline";
+  title: string;
+};
+
 export type ResendActivationEmailRequest = {
   userEmail: string;
 };
@@ -843,6 +852,37 @@ export type GetAuthValidateSessionResponses = {
 
 export type GetAuthValidateSessionResponse =
   GetAuthValidateSessionResponses[keyof GetAuthValidateSessionResponses];
+
+export type GetLivestreamCurrentData = {
+  body?: never;
+  path?: never;
+  query?: never;
+  url: "/livestream/current";
+};
+
+export type GetLivestreamCurrentErrors = {
+  /**
+   * Authentication errors
+   */
+  401: ApiMessageResponse;
+  /**
+   * Internal server error
+   */
+  500: ApiMessageResponse;
+};
+
+export type GetLivestreamCurrentError =
+  GetLivestreamCurrentErrors[keyof GetLivestreamCurrentErrors];
+
+export type GetLivestreamCurrentResponses = {
+  /**
+   * Current livestream retrieved successfully.
+   */
+  200: Livestream;
+};
+
+export type GetLivestreamCurrentResponse =
+  GetLivestreamCurrentResponses[keyof GetLivestreamCurrentResponses];
 
 export type GetCsrfTokenData = {
   body?: never;

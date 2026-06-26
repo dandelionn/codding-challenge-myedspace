@@ -1,0 +1,19 @@
+.wrapper {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: var(--border-radius-lg);
+	overflow: hidden;
+	background: #000;
+	box-shadow: var(--color-semantic-shadow-md);
+}
+
+.player {
+	width: 100%;
+	height: 100%;
+}
+
+.status {
+	margin: var(--spacing-sm) 0 0;
+	font-size: var(--typography-font-size-sm);
+	color: var(--color-semantic-text-secondary);
+}

@@ -144,6 +144,27 @@ export const UserSchema = {
   },
 } as const;
 
+export const LivestreamSchema = {
+  type: "object",
+  required: ["videoId", "status", "title"],
+  properties: {
+    videoId: {
+      type: "string",
+      description: "YouTube video ID for the current livestream embed",
+      example: "LXb3EKWsInQ",
+    },
+    status: {
+      type: "string",
+      enum: ["live", "offline"],
+      example: "live",
+    },
+    title: {
+      type: "string",
+      example: "Demo Video — Costa Rica 4K",
+    },
+  },
+} as const;
+
 export const ResendActivationEmailRequestSchema = {
   type: "object",
   required: ["userEmail"],

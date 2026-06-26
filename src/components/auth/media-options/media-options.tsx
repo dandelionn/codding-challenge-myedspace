@@ -3,7 +3,7 @@ import styles from './media-options.module.css';
 import { FaGithub } from 'react-icons/fa6';
 import { FcGoogle } from 'react-icons/fc';
 import classnames from 'classnames';
-import { useTranslations } from '@/i18n/use-translations';
+import { useTranslations } from '@/i18n';
 
 const MediaOptions = ({ isLogin }: { isLogin?: boolean }) => {
 	const t = useTranslations('forms.social-auth');

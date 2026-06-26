@@ -61,7 +61,11 @@
 		},
 		"dashboard": {
 			"title": "Tabloul de Bord",
-			"subtitle": "Prezentare generală a contului, activității și informațiilor esențiale."
+			"subtitle": "Prezentare generală a contului, activității și informațiilor esențiale.",
+			"welcome": "Bun venit, {firstName} {lastName} ({email})"
+		},
+		"watch": {
+			"title": "Urmărește livestream-ul"
 		},
 		"not-found": {
 			"title": "Pagina nu a fost găsită",
@@ -208,9 +212,93 @@
 			}
 		}
 	},
+	"account": {
+		"title": "Setări cont",
+		"subtitle": "Gestionează securitatea și preferințele contului",
+		"twoFA": {
+			"title": "Autentificare în doi pași",
+			"description": "Adaugă un strat suplimentar de securitate contului tău activând autentificarea în doi pași.",
+			"enabled": "Activată",
+			"enableButton": "Activează autentificarea în doi pași",
+			"disableButton": "Dezactivează autentificarea în doi pași",
+			"qrCodeInstructions": "Scanează acest cod QR cu aplicația ta de autentificare (Google Authenticator, Authy etc.)",
+			"manualSecretLabel": "Nu poți scana codul QR? Introdu manual această cheie secretă:",
+			"verificationInstructions": "Introdu codul de 6 cifre din aplicația de autentificare:",
+			"verifyButton": "Verifică și activează",
+			"cancelButton": "Anulează",
+			"tryAgainButton": "Încearcă din nou",
+			"successMessage": "Autentificarea în doi pași a fost activată cu succes pentru contul tău.",
+			"disableConfirmMessage": "Ești sigur că vrei să dezactivezi autentificarea în doi pași? Contul tău va fi mai puțin securizat.",
+			"disabledMessage": "Autentificarea în doi pași a fost dezactivată",
+			"setupError": "Inițializarea 2FA a eșuat",
+			"verifyError": "Verificarea codului 2FA a eșuat",
+			"disableError": "Dezactivarea 2FA a eșuat",
+			"csrfError": "Nu s-a putut obține tokenul CSRF",
+			"invalidCodeError": "Te rugăm să introduci un cod valid de 6 cifre"
+		}
+	},
 	"manifest": {
 		"name": "Next.js Auth Demo",
 		"short_name": "Auth Demo",
 		"description": "Aplicație Next.js cu autentificare hibridă"
+	},
+	"locale": {
+		"label": "Limbă",
+		"en": "English",
+		"ro": "Română"
+	},
+	"livestream": {
+		"title": "Livestream",
+		"ariaLabel": "Livestream",
+		"authRequired": "Autentificare necesară",
+		"checkingAccess": "Se verifică accesul",
+		"loading": "Se încarcă livestream-ul",
+		"loadError": "Nu s-a putut încărca livestream-ul.",
+		"videoId": "ID video YouTube: {videoId}",
+		"status": {
+			"live": "Live",
+			"offline": "Offline"
+		},
+		"loginPrompt": {
+			"title": "Autentifică-te pentru a urmări livestream-ul",
+			"description": "Videoclipul încorporat este disponibil doar utilizatorilor autentificați. Autentifică-te pentru a urmări și a înregistra interacțiunile de redare.",
+			"button": "Autentificare"
+		},
+		"player": {
+			"loading": "Se încarcă playerul…",
+			"error": "Nu s-a putut încărca playerul YouTube.",
+			"mockLabel": "Player simulat",
+			"videoId": "videoId: {videoId}",
+			"controls": {
+				"play": "Redare",
+				"pause": "Pauză",
+				"seek": "Salt +30s"
+			}
+		},
+		"events": {
+			"ariaLabel": "Evenimente de interacțiune video",
+			"title": "Evenimente de interacțiune",
+			"countAriaLabel": "{count} evenimente înregistrate",
+			"subtitle": "Stocate în memorie pentru această sesiune. De asemenea, sunt înregistrate în consola browserului.",
+			"clear": "Șterge",
+			"empty": "Redă, pune pe pauză sau navighează în video — fiecare acțiune va apărea aici și în consolă ca [video-event].",
+			"types": {
+				"play": "redare",
+				"pause": "pauză",
+				"seek": "salt"
+			}
+		}
+	},
+	"dev": {
+		"msw": {
+			"enabled": "MSW activat",
+			"disabled": "MSW dezactivat",
+			"enableAria": "Activează MSW",
+			"disableAria": "Dezactivează MSW",
+			"credentialsTitle": "Utilizator demo MSW",
+			"credentialsAria": "Date de autentificare demo MSW",
+			"email": "Email",
+			"password": "Parolă"
+		}
 	}
 }

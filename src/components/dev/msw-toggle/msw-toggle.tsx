@@ -1,9 +1,11 @@
 import { createPortal } from 'react-dom';
 import { useMswOptional } from '@/providers/msw-provider';
+import { useTranslations } from '@/i18n';
 import styles from './msw-toggle.module.css';
 
 export default function MswToggle() {
 	const msw = useMswOptional();
+	const t = useTranslations('dev.msw');
 
 	if (!import.meta.env.DEV || !msw) {
 		return null;
@@ -18,9 +20,9 @@ export default function MswToggle() {
 			className={styles.toggle}
 			data-active={enabled}
 			aria-pressed={enabled}
-			aria-label={enabled ? 'Disable MSW' : 'Enable MSW'}
+			aria-label={enabled ? t('disableAria') : t('enableAria')}
 		>
-			{enabled ? 'MSW enabled' : 'MSW disabled'}
+			{enabled ? t('enabled') : t('disabled')}
 		</button>,
 		document.body
 	);
