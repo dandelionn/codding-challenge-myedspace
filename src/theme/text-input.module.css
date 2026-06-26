@@ -1,0 +1,94 @@
+.section {
+	color: var(--color-semantic-text-primary);
+}
+.root {
+}
+.label {
+	color: var(--color-semantic-text-primary);
+	font-family: var(--typography-font-family-body);
+	font-weight: var(--typography-font-weight-medium);
+	font-size: var(--typography-font-size-sm);
+	line-height: var(--typography-line-height-tight);
+	margin-bottom: var(--spacing-xs);
+}
+.required {
+	color: var(--color-semantic-text-primary);
+}
+.description {
+	color: var(--color-semantic-text-secondary);
+}
+.error {
+	color: var(--color-semantic-status-error);
+}
+.inputWrapper {
+	border: 1px solid var(--color-semantic-interactive-input-border);
+	background-color: var(--color-semantic-interactive-input-background);
+	border-radius: var(--border-radius-md);
+	box-shadow: var(--color-semantic-shadow-sm);
+	transition:
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+	border-color: var(--color-semantic-interactive-input-border-focus);
+	box-shadow:
+		0 0 0 2px var(--color-semantic-utility-focus-ring),
+		var(--color-semantic-shadow-md);
+}
+
+.input:focus-visible {
+	outline: none;
+	border-color: transparent;
+	box-shadow: none;
+}
+
+.input {
+	border-radius: var(--border-radius-md);
+	padding: var(--spacing-sm) var(--spacing-md);
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-base);
+	font-weight: var(--typography-font-weight-normal);
+	line-height: var(--typography-line-height-normal);
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease,
+		box-shadow 0.2s ease;
+	background-color: transparent;
+	border: 0;
+	color: var(--color-semantic-text-primary);
+}
+
+.input::placeholder {
+	color: var(--color-semantic-interactive-input-placeholder);
+	font-family: var(--typography-font-family-body);
+	font-weight: var(--typography-font-weight-normal);
+	font-size: var(--typography-font-size-base);
+}
+
+/* Danger Variant: For critical actions or warnings */
+.input[data-variant='danger'] {
+	background-color: var(--color-semantic-status-error-light);
+	color: var(--color-semantic-text-on-error);
+	border: 1px solid var(--color-semantic-interactive-input-border-error);
+}
+
+/* Default Variant: Neutral style for regular inputs */
+.input[data-variant='default'] {
+	background-color: var(--color-semantic-interactive-input-background);
+	color: var(--color-semantic-text-primary);
+	border: 1px solid var(--color-semantic-interactive-input-border);
+}
+
+/* Disabled Variant: For inputs that are not interactive */
+.input[data-variant='disabled'] {
+	background-color: var(--color-semantic-interactive-input-background-disabled);
+	color: var(--color-semantic-text-disabled);
+	border: 1px solid var(--color-semantic-border-light);
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.input[data-variant='disabled']:hover {
+	background-color: var(--color-semantic-interactive-input-background-disabled);
+}

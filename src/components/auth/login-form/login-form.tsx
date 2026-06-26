@@ -1,0 +1,98 @@
+import styles from './login-form.module.css';
+import { TextInput, Container, Card, Button, PasswordInput } from '@mantine/core';
+import { useForm } from '@mantine/form';
+import { Link } from 'react-router-dom';
+import { useId, useState } from 'react';
+import MediaOptions from '../media-options';
+import { useTranslations } from '@/i18n/use-translations';
+import MessageBox, { Message } from '@/components/message-box';
+import { CustomLoadingOverlay } from '@/components/auth/custom-loading-overlay';
+import type { LoginRequest } from '@/api/generated';
+import { PublicRoutes } from '@/routes';
+
+type LoginFormProps = {
+	onSubmit: (data: LoginRequest) => void;
+	loading?: boolean;
+	messages?: Message[];
+};
+
+export default function LoginForm({ onSubmit, loading, messages }: LoginFormProps) {
+	const [loadingInProgress, setLoading] = useState(loading);
+	const t = useTranslations('forms.login');
+
+	const emailInputId = useId();
+	const passwordInputId = useId();
+
+	const form = useForm({
+		initialValues: {
+			email: '',
+			password: '',
+		},
+
+		validate: {
+			email: (value) =>
+				!value
+					? t('validation.emailRequired')
+					: !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
+						? t('validation.invalidEmail')
+						: null,
+			password: (value) => (!value ? t('validation.passwordRequired') : null),
+		},
+	});
+
+	return (
+		<Container className={styles.container} p={0}>
+			<Card
+				className={styles.card}
+				pos="relative"
+				padding={0}
+				withBorder={false}
+				shadow="none"
+				radius={0}
+			>
+				<CustomLoadingOverlay
+					visible={loading}
+					onTransitionStart={() => setLoading(true)}
+					onTransitionEnd={() => setLoading(false)}
+				/>
+				<form onSubmit={form.onSubmit(onSubmit)} className={styles.form}>
+					<TextInput
+						id={emailInputId}
+						label={t('labels.email')}
+						type="email"
+						withAsterisk={false}
+						placeholder={t('placeholders.email')}
+						{...form.getInputProps('email')}
+					/>
+					<PasswordInput
+						id={passwordInputId}
+						label={t('labels.password')}
+						withAsterisk={false}
+						placeholder={t('placeholders.password')}
+						{...form.getInputProps('password')}
+					/>
+					<div className={styles.formLink}>
+						<span>
+							<Link to={PublicRoutes.requestPasswordReset} className={styles.forgotPassword}>
+								{t('links.forgotPassword')}
+							</Link>
+						</span>
+					</div>
+					{messages && !loadingInProgress && <MessageBox messages={messages} className={styles.messageBox} />}
+					<Button fullWidth type="submit" className={styles.submitButton}>
+						{t('buttons.login')}
+					</Button>
+				</form>
+				<div className={styles.formLink}>
+					<span>
+						{t('prompts.noAccount')}{' '}
+						<Link to={PublicRoutes.register} className={styles.signupLink}>
+							{t('links.signUp')}
+						</Link>
+					</span>
+				</div>
+				<MediaOptions isLogin={true} />
+			</Card>
+		</Container>
+	);
+}

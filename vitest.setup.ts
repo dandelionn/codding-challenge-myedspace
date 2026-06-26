@@ -2,6 +2,7 @@
 import "@testing-library/jest-dom/vitest";
 import { setupServer } from "msw/node";
 import { vi } from "vitest";
+import { handlers } from "./src/mocks/handlers";
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -17,7 +18,7 @@ Object.defineProperty(window, "matchMedia", {
   })),
 });
 
-const server = setupServer();
+const server = setupServer(...handlers);
 
 beforeAll(() => {
   server.listen();

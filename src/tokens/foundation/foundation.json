@@ -1,0 +1,99 @@
+{
+	"borderRadius": {
+		"none": { "value": "0px", "comment": "no rounding" },
+		"xs": { "value": "2px", "comment": "extra small radius" },
+		"sm": { "value": "4px", "comment": "small radius" },
+		"md": { "value": "8px", "comment": "medium radius" },
+		"lg": { "value": "12px", "comment": "large radius" },
+		"xl": { "value": "16px", "comment": "extra large radius" },
+		"2xl": { "value": "24px", "comment": "double extra large radius" },
+		"3xl": { "value": "32px", "comment": "triple extra large radius" },
+		"full": { "value": "9999px", "comment": "fully rounded / pill" }
+	},
+	"breakpoints": {
+		"xs": { "value": "30em", "comment": "~480px" },
+		"sm": { "value": "40em", "comment": "~640px" },
+		"md": { "value": "48em", "comment": "~768px" },
+		"lg": { "value": "64em", "comment": "~1024px" },
+		"xl": { "value": "80em", "comment": "~1280px" },
+		"2xl": { "value": "96em", "comment": "~1536px" }
+	},
+	"spacing": {
+		"0": { "value": "0px", "comment": "no spacing" },
+		"xxs": { "value": "2px", "comment": "extra extra small spacing" },
+		"xs": { "value": "4px", "comment": "extra small spacing" },
+		"sm": { "value": "8px", "comment": "small spacing" },
+		"md": { "value": "12px", "comment": "medium spacing" },
+		"lg": { "value": "16px", "comment": "large spacing" },
+		"xl": { "value": "24px", "comment": "extra large spacing" },
+		"2xl": { "value": "32px", "comment": "double extra large spacing" },
+		"3xl": { "value": "40px", "comment": "triple extra large spacing" },
+		"4xl": { "value": "48px", "comment": "quadruple extra large spacing" },
+		"5xl": { "value": "64px", "comment": "quintuple extra large spacing" },
+		"6xl": { "value": "80px", "comment": "sextuple extra large spacing" },
+		"7xl": { "value": "96px", "comment": "septuple extra large spacing" }
+	},
+	"typography": {
+		"fontFamily": {
+			"sans": {
+				"value": "'Inter', 'Roboto', 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+				"comment": "Primary sans-serif font stack"
+			},
+			"serif": {
+				"value": "'Merriweather', 'Georgia', 'Times New Roman', serif",
+				"comment": "Primary serif font stack"
+			},
+			"mono": {
+				"value": "'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace",
+				"comment": "Monospace font stack"
+			},
+			"display": {
+				"value": "'Montserrat', 'Inter', 'Roboto', sans-serif",
+				"comment": "Display/heading font stack"
+			},
+			"body": { "value": "'Inter', 'Roboto', 'Lato', sans-serif", "comment": "Body text font stack" }
+		},
+		"fontSize": {
+			"xs": { "value": "0.75rem", "comment": "12px - Extra small text" },
+			"sm": { "value": "0.875rem", "comment": "14px - Small text" },
+			"base": { "value": "1rem", "comment": "16px - Base text size" },
+			"lg": { "value": "1.125rem", "comment": "18px - Large text" },
+			"xl": { "value": "1.25rem", "comment": "20px - Extra large text" },
+			"2xl": { "value": "1.5rem", "comment": "24px - 2x large text" },
+			"3xl": { "value": "1.875rem", "comment": "30px - 3x large text" },
+			"4xl": { "value": "2.25rem", "comment": "36px - 4x large text" },
+			"5xl": { "value": "3rem", "comment": "48px - 5x large text" },
+			"6xl": { "value": "3.75rem", "comment": "60px - 6x large text" },
+			"7xl": { "value": "4.5rem", "comment": "72px - 7x large text" },
+			"8xl": { "value": "6rem", "comment": "96px - 8x large text" },
+			"9xl": { "value": "8rem", "comment": "128px - 9x large text" }
+		},
+		"fontWeight": {
+			"thin": { "value": "100", "comment": "Thin weight" },
+			"extralight": { "value": "200", "comment": "Extra light weight" },
+			"light": { "value": "300", "comment": "Light weight" },
+			"normal": { "value": "400", "comment": "Normal weight" },
+			"medium": { "value": "500", "comment": "Medium weight" },
+			"semibold": { "value": "600", "comment": "Semi bold weight" },
+			"bold": { "value": "700", "comment": "Bold weight" },
+			"extrabold": { "value": "800", "comment": "Extra bold weight" },
+			"black": { "value": "900", "comment": "Black weight" }
+		},
+		"lineHeight": {
+			"none": { "value": "1", "comment": "No line height" },
+			"tight": { "value": "1.25", "comment": "Tight line height" },
+			"snug": { "value": "1.375", "comment": "Snug line height" },
+			"normal": { "value": "1.5", "comment": "Normal line height" },
+			"relaxed": { "value": "1.625", "comment": "Relaxed line height" },
+			"loose": { "value": "2", "comment": "Loose line height" }
+		},
+		"letterSpacing": {
+			"tighter": { "value": "-0.05em", "comment": "Tighter letter spacing" },
+			"tight": { "value": "-0.025em", "comment": "Tight letter spacing" },
+			"normal": { "value": "0em", "comment": "Normal letter spacing" },
+			"wide": { "value": "0.025em", "comment": "Wide letter spacing" },
+			"wider": { "value": "0.05em", "comment": "Wider letter spacing" },
+			"widest": { "value": "0.1em", "comment": "Widest letter spacing" }
+		}
+	}
+}

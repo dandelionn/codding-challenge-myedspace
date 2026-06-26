@@ -1,0 +1,115 @@
+.line {
+	position: relative;
+	height: 1px;
+	width: 100%;
+	background-color: var(--color-semantic-border-divider);
+	margin: var(--spacing-lg) 0 var(--spacing-xl) 0;
+	border-radius: 2px;
+}
+
+.line::before {
+	content: 'Or';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--color-semantic-surface-card);
+	color: var(--color-semantic-text-secondary);
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding: 0 0.75rem;
+	border-radius: 999px;
+	border: 1px solid var(--color-semantic-border-default);
+	box-shadow: var(--color-semantic-shadow-sm);
+}
+
+.mediaOptions {
+	width: 100%;
+}
+
+.mediaOption {
+	width: 100%;
+}
+
+.buttonLink {
+	position: relative;
+	width: 100%;
+	margin-top: var(--spacing-md);
+	border-radius: 6px;
+	display: flex;
+}
+
+.buttonLinkInner,
+.buttonLinkLabel {
+	width: 100%;
+}
+
+.buttonLinkLabel {
+	display: grid;
+}
+
+.icon {
+	position: absolute;
+	justify-self: flex-start;
+}
+
+/* GitHub Button */
+.github {
+	background-color: var(--color-semantic-interactive-button-secondary);
+	color: var(--color-semantic-interactive-button-text);
+	border: 1px solid var(--color-semantic-border-medium);
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.github:hover {
+	background-color: var(--color-semantic-interactive-button-secondary-hover);
+	border-color: var(--color-semantic-interactive-button-secondary-active);
+}
+
+/* Theme handles dark mode */
+
+/* Google Button */
+.google {
+	background-color: var(--color-semantic-interactive-button-secondary);
+	color: var(--color-semantic-interactive-button-text);
+	border: 1px solid var(--color-semantic-border-medium);
+	box-shadow: var(--color-semantic-shadow-sm);
+	transition:
+		background-color 0.2s ease,
+		border-color 0.2s ease;
+}
+
+.google:hover {
+	background-color: var(--color-semantic-interactive-button-secondary-hover);
+	border-color: var(--color-semantic-interactive-button-secondary-active);
+	box-shadow: var(--color-semantic-shadow-md);
+}
+
+.googleLabel {
+	font-weight: 500;
+	opacity: 1;
+	color: var(--color-semantic-text-primary);
+}
+
+/* Theme handles dark mode */
+
+@media screen and (max-width: 350px) {
+	.icon {
+		position: relative;
+	}
+
+	.buttonLink {
+		height: fit-content;
+	}
+
+	.buttonLinkLabel {
+		padding: 4px;
+		display: flex;
+		gap: 4px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}

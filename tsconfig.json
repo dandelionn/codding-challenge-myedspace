@@ -28,6 +28,6 @@
     }
   },
   "include": ["src"],
-  "exclude": ["src/**/*.test.tsx"],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.spec.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

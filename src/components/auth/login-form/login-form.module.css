@@ -1,0 +1,92 @@
+.container {
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+	color: var(--color-semantic-text-primary);
+}
+
+.card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	background-color: var(--color-semantic-surface-card);
+	border: 1px solid var(--color-semantic-border-divider);
+	border-radius: var(--border-radius-xl);
+	box-shadow: var(--color-semantic-shadow-lg);
+	padding: var(--spacing-2xl);
+	gap: var(--spacing-md);
+}
+
+.form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.messageBox {
+	margin-bottom: var(--spacing-xs);
+}
+
+.formLink {
+	text-align: center;
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-sm);
+	font-weight: var(--typography-font-weight-normal);
+	line-height: var(--typography-line-height-relaxed);
+	margin-top: var(--spacing-xs);
+	margin-bottom: var(--spacing-xs);
+}
+
+.formLink span {
+	color: var(--color-semantic-text-secondary);
+}
+
+.signupLink,
+.forgotPassword {
+	color: var(--color-semantic-interactive-link-default);
+	text-decoration: none;
+	font-family: var(--typography-font-family-body);
+	font-weight: var(--typography-font-weight-semibold);
+	margin-left: var(--spacing-xs);
+	transition: color 0.2s ease;
+}
+
+.signupLink:hover,
+.forgotPassword:hover {
+	color: var(--color-semantic-interactive-link-hover);
+	text-decoration: underline;
+}
+
+.submitButton {
+	margin-top: var(--spacing-xs);
+	min-height: 44px;
+	border: none;
+	background: var(--color-semantic-gradient-primary);
+	color: #ffffff;
+	font-size: var(--typography-font-size-base);
+	font-weight: var(--typography-font-weight-semibold);
+	box-shadow: var(--color-semantic-shadow-md);
+	transition:
+		filter 0.2s ease,
+		box-shadow 0.2s ease,
+		transform 0.15s ease;
+}
+
+.submitButton:hover {
+	filter: brightness(1.03);
+	box-shadow: var(--color-semantic-shadow-lg);
+}
+
+.submitButton:active {
+	transform: translateY(1px);
+	filter: brightness(0.97);
+}
+
+@media (max-width: 500px) {
+	.card {
+		padding: var(--spacing-xl);
+		border-radius: var(--border-radius-lg);
+	}
+}

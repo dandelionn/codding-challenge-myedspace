@@ -1,0 +1,241 @@
+{
+	"navigation": {
+		"home": "Home",
+		"login": "Login",
+		"signout": "Log out",
+		"logout": "Logout",
+		"loggingOut": "Logging out...",
+		"account": "Account"
+	},
+	"pages": {
+		"home": {
+			"title": "Next.js Auth Demo",
+			"subtitle": "A full-featured authentication demo using Next.js frontend and Node.js backend, combining sessions with JWT for secure and scalable login flows.",
+			"getStarted": "Get Started",
+			"whatsInside": "What’s Inside",
+			"description": "This demo app is a real-world example of implementing secure authentication using <strong>Next.js</strong> on the frontend and a <strong>Node.js backend</strong>. It combines <strong>JWT</strong> and <strong>sessions</strong> to balance stateless APIs with server-side control — great for full-stack developers building production-ready login flows.",
+			"features": {
+				"0": "🔐 Login, signup, logout, and protected route examples using <code>Next.js</code>",
+				"1": "🛡️ Hybrid auth model: server sessions + JWT for frontend flexibility",
+				"2": "🔄 Secure cookie storage with automatic token refresh and CSRF protection",
+				"3": "⚙️ Backend auth API built with <code>Node.js</code> and <code>Express</code>",
+				"4": "📄 SSR support with session checks for private pages",
+				"5": "👥 Role-based access control with frontend and backend guards"
+			}
+		},
+		"register": {
+			"title": "Create a New Account",
+			"subtitle": "Sign up with your email address to access your dashboard securely."
+		},
+		"login": {
+			"title": "Log In to Your Account",
+			"subtitle": "Please enter your credentials to proceed."
+		},
+		"reset-password": {
+			"title": "Reset Your Password",
+			"subtitle": "Set a new password to regain access to your account."
+		},
+		"resend-activation-email": {
+			"title": "Request New Activation Email",
+			"subtitle": "If you did not receive the activation email, you may request a new one here."
+		},
+		"send-reset-password-email": {
+			"title": "Request Password Reset",
+			"subtitle": "Submit your email address to receive password reset instructions."
+		},
+		"send-deactivate-2fa-email": {
+			"title": "Request Two-Factor Authentication Deactivation",
+			"subtitle": "If you can no longer access your 2FA device, request to deactivate two-factor authentication and regain access."
+		},
+		"verify-account": {
+			"title": "Verify Your Account",
+			"subtitle": "We are confirming your email address. Please wait while we complete the verification process."
+		},
+		"verify-deactivate-2fa": {
+			"title": "Verify Two-Factor Deactivation",
+			"subtitle": "We are validating your request to deactivate two-factor authentication. Please wait while we complete the process."
+		},
+		"twoStep": {
+			"title": "Two-Factor Authentication",
+			"subtitle": "Please enter the 6-digit code from your authenticator app to complete your login."
+		},
+		"dashboard": {
+			"title": "Your Dashboard",
+			"subtitle": "Overview of your account, activity, and key insights."
+		},
+		"not-found": {
+			"title": "Page not found",
+			"subtitle": "Please double-check the browser address bar or use the navigation to go to a known page."
+		}
+	},
+	"forms": {
+		"login": {
+			"labels": {
+				"email": "Email:",
+				"password": "Password:"
+			},
+			"placeholders": {
+				"email": "Enter your email",
+				"password": "Enter your password"
+			},
+			"validation": {
+				"emailRequired": "Email is required",
+				"invalidEmail": "Invalid email address",
+				"passwordRequired": "Password is required"
+			},
+			"links": {
+				"forgotPassword": "Forgot password?",
+				"signUp": "Sign up"
+			},
+			"buttons": {
+				"login": "Login"
+			},
+			"prompts": {
+				"noAccount": "Don't have an account?"
+			}
+		},
+		"register": {
+			"labels": {
+				"email": "Email:",
+				"password": "Password:",
+				"confirmPassword": "Confirm password:"
+			},
+			"placeholders": {
+				"email": "Enter your email",
+				"password": "Enter your password",
+				"confirmPassword": "Retype your password"
+			},
+			"validation": {
+				"emailRequired": "Email is required",
+				"invalidEmail": "Invalid email address",
+				"passwordRequired": "Password is required",
+				"passwordRules": "Your password should be at least 8 characters long and it should contain at least one lowercase character, one uppercase character, one symbol, and one number.",
+				"confirmPasswordRequired": "Confirming your password is required",
+				"passwordsMismatch": "Passwords do not match",
+				"termsRequired": "You must accept the terms and conditions."
+			},
+			"buttons": {
+				"signUp": "Sign up"
+			},
+			"links": {
+				"login": "Login"
+			},
+			"prompts": {
+				"haveAccount": "Already have an account?"
+			}
+		},
+		"request_password_reset": {
+			"validation": {
+				"emailRequired": "Email is required"
+			},
+			"labels": {
+				"email": "Email"
+			},
+			"placeholders": {
+				"email": "Enter your email"
+			},
+			"buttons": {
+				"send_password_reset_email": "Send reset password email"
+			},
+			"back_to_sign_in": "or go back to <loginLink>Sign in</loginLink> page."
+		},
+		"reset_password": {
+			"title": "Reset Your Password",
+			"validation": {
+				"passwordRules": "Your password should be at least 8 characters long and it should contain at least one lowercase character, one uppercase character, one symbol, and one number.",
+				"confirmPasswordRequired": "Confirming your password is required",
+				"passwordsMismatch": "Passwords do not match"
+			},
+			"labels": {
+				"password": "Enter your password",
+				"confirmPassword": "Retype your password"
+			},
+			"placeholders": {
+				"password": "Enter your password",
+				"confirmPassword": "Retype your password"
+			},
+			"buttons": {
+				"reset_password": "Reset password"
+			}
+		},
+		"reset_password_email_sent": {
+			"message": "An email with reset password instructions has been sent to {email} and it should arrive soon. Please check your inbox."
+		},
+		"password_updated": {
+			"message": "Your password has been reset successfully. Please go to <loginLink>Sign in</loginLink> page."
+		},
+		"account_verified": {
+			"message": "Your account has been verified successfully. Please go to <loginLink>Sign in</loginLink> page."
+		},
+		"request_confirmation_email": {
+			"validation": {
+				"emailRequired": "Email is required"
+			},
+			"labels": {
+				"email": "Email"
+			},
+			"placeholders": {
+				"email": "Enter your email"
+			},
+			"buttons": {
+				"resent_activation_email": "Resend activation email"
+			},
+			"back_to_sign_in": "or go back to <loginLink>Sign in</loginLink> page."
+		},
+		"social-auth": {
+			"login-with-google": "Login with Google",
+			"login-with-github": "Login with GitHub",
+			"signup-with-google": "Sign up with Google",
+			"signup-with-github": "Sign up with GitHub"
+		},
+		"terms": {
+			"agreement": "I have read and I agree to the <termsLink>terms and conditions</termsLink>.",
+			"termsAndConditions": "termenii și condițiile"
+		},
+		"twoFA": {
+			"labels": {
+				"code": "Authentication Code:"
+			},
+			"placeholders": {
+				"code": "Enter 6-digit code"
+			},
+			"validation": {
+				"codeRequired": "Authentication code is required",
+				"invalidCode": "Please enter a valid 6-digit code"
+			},
+			"buttons": {
+				"verify": "Verify Code"
+			}
+		}
+	},
+	"account": {
+		"title": "Account Settings",
+		"subtitle": "Manage your account security and preferences",
+		"twoFA": {
+			"title": "Two-Factor Authentication",
+			"description": "Add an extra layer of security to your account by enabling two-factor authentication.",
+			"enabled": "Enabled",
+			"enableButton": "Enable Two-Factor Authentication",
+			"disableButton": "Disable Two-Factor Authentication",
+			"qrCodeInstructions": "Scan this QR code with your authenticator app (Google Authenticator, Authy, etc.)",
+			"manualSecretLabel": "Can't scan the QR code? Enter this secret key manually:",
+			"verificationInstructions": "Enter the 6-digit code from your authenticator app:",
+			"verifyButton": "Verify & Enable",
+			"cancelButton": "Cancel",
+			"tryAgainButton": "Try Again",
+			"successMessage": "Two-factor authentication has been successfully enabled for your account.",
+			"disableConfirmMessage": "Are you sure you want to disable two-factor authentication? This will make your account less secure.",
+			"disabledMessage": "Two-factor authentication has been disabled",
+			"setupError": "Failed to initialize 2FA setup",
+			"verifyError": "Failed to verify 2FA code",
+			"disableError": "Failed to disable 2FA",
+			"csrfError": "Failed to get CSRF token",
+			"invalidCodeError": "Please enter a valid 6-digit code"
+		}
+	},
+	"manifest": {
+		"name": "Next.js Auth Demo",
+		"short_name": "Auth Demo",
+		"description": "Next.js application with hybrid authentication"
+	}
+}

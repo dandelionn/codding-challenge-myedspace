@@ -1,0 +1,110 @@
+@import url('./tokens/index.css');
+
+:root {
+	--navbarHeight: 0px;
+	--mantine-font-family: var(--typography-font-family-body);
+	--mantine-font-family-headings: var(--typography-font-family-display);
+	--mantine-color-body: var(--color-semantic-background-primary);
+	--mantine-color-text: var(--color-semantic-text-primary);
+	--mantine-color-anchor: var(--color-semantic-interactive-link-default);
+	--mantine-color-blue-filled: var(--color-base-blue-600);
+	--mantine-color-blue-filled-hover: var(--color-base-blue-700);
+	--mantine-color-blue-light: var(--color-base-blue-50);
+	--mantine-color-blue-light-hover: var(--color-base-blue-100);
+	--mantine-color-blue-light-color: var(--color-base-blue-700);
+	--mantine-color-blue-outline: var(--color-base-blue-600);
+	--mantine-color-blue-outline-hover: var(--color-base-blue-50);
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html {
+		color-scheme: light;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--color-semantic-text-primary);
+	background: var(--color-semantic-background-primary);
+	font-family: var(--typography-font-family-body);
+	font-size: var(--typography-font-size-base);
+	line-height: var(--typography-line-height-normal);
+}
+
+#root {
+	min-height: 100vh;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-semantic-border-strong) var(--color-semantic-background-secondary);
+}
+
+*::-webkit-scrollbar {
+	width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--color-semantic-background-secondary);
+}
+
+*::-webkit-scrollbar-thumb {
+	border: 2px solid var(--color-semantic-background-secondary);
+	border-radius: 10px;
+	background-color: var(--color-semantic-border-strong);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--typography-font-family-display);
+	font-weight: var(--typography-font-weight-semibold);
+	line-height: var(--typography-line-height-tight);
+	letter-spacing: var(--typography-letter-spacing-tight);
+	color: var(--color-semantic-text-primary);
+}
+
+h1 {
+	font-size: var(--typography-font-size-5xl);
+}
+
+h2 {
+	font-size: var(--typography-font-size-4xl);
+}
+
+h3 {
+	font-size: var(--typography-font-size-3xl);
+}
+
+h4 {
+	font-size: var(--typography-font-size-2xl);
+}
+
+h5 {
+	font-size: var(--typography-font-size-xl);
+}
+
+h6 {
+	font-size: var(--typography-font-size-lg);
+}
+
+a {
+	color: var(--color-semantic-interactive-link-default);
+}
+
+a:hover {
+	color: var(--color-semantic-interactive-link-hover);
+}
